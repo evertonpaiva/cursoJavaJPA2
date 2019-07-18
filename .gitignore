@@ -1,5 +1,8 @@
 /.metadata/
 
+# Configuracao do apache
+/Servers/
+
 # DB
 !db/mysql/.gitkeep
 db/mysql/*
