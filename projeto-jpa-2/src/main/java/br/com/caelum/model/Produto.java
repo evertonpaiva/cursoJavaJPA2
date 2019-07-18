@@ -37,6 +37,14 @@ public class Produto {
 	@ManyToMany
 	List<Categoria> categorias = new ArrayList<>();
 	
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+
 	@Valid
 	@ManyToOne
 	private Loja loja;
@@ -49,14 +57,12 @@ public class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	//método auxiliar para associar categorias com o produto
-	//se funcionar apos ter definido o relacionamento entre produto e categoria
-//	public void adicionarCategorias(Categoria... categorias) {
-//		for (Categoria categoria : categorias) {
-//			this.categorias.add(categoria);
-//		}
-//	}
+		
+	public void adicionarCategorias(Categoria... categorias) {
+		for (Categoria categoria : categorias) {
+			this.categorias.add(categoria);
+		}
+	}
 
 	public String getLinkDaFoto() {
 		return linkDaFoto;
