@@ -1,0 +1,5 @@
+/.metadata/
+
+# DB
+#!db/mysql/.gitkeep
+#db/mysql/*
