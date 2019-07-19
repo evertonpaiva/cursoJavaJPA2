@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
@@ -26,6 +27,9 @@ public class Produto {
 	private String nome;
 	@NotEmpty
 	private String linkDaFoto;
+	
+	@Version
+	private int versao;
 	
 	@NotEmpty
 	@Column(columnDefinition="TEXT")
@@ -43,6 +47,14 @@ public class Produto {
 
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
+	}
+	
+	public int getVersao() {
+		return versao;
+	}
+	
+	public void setVersao(int versao) {
+		this.versao = versao;
 	}
 
 	@Valid
